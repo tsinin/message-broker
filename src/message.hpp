@@ -1,14 +1,13 @@
 #ifndef HAVKA_MESSAGE_HPP
 #define HAVKA_MESSAGE_HPP
 
+#include <cereal/archives/binary.hpp>
+#include <cereal/types/optional.hpp>
+#include <cereal/types/string.hpp>
+#include <cereal/types/vector.hpp>
+#include <chrono>
 #include <optional>
 #include <string>
-#include <chrono>
-
-#include <cereal/archives/binary.hpp>
-#include <cereal/types/vector.hpp>
-#include <cereal/types/string.hpp>
-#include <cereal/types/optional.hpp>
 
 /// Namespace with all classes of havka library
 namespace havka {
@@ -30,7 +29,8 @@ struct Message {
      * @param size length of data in bytes
      * @param dataType_ data type
      */
-    void setData(const char* data_, std::size_t size, MessageDataType dataType_) {
+    void setData(const char* data_, std::size_t size,
+                 MessageDataType dataType_) {
         dataType = dataType_;
         data = std::string(data_, size);
     }
@@ -66,7 +66,7 @@ struct Message {
      * @tparam Archive archive type
      * @param ar archive
      */
-    template<class Archive>
+    template <class Archive>
     void serialize(Archive& ar) {
         ar(dataType, data);
     }
@@ -136,7 +136,8 @@ enum ResponseType {
  * messaging protocol.
  */
 struct Request {
-    /// Message in request. Can be empty (for 'GetMessage*' requests) so it is optional.
+    /// Message in request. Can be empty (for 'GetMessage*' requests) so it is
+    /// optional.
     std::optional<Message> message;
 
     /// Topic. Not empty for PostMessage* and GetMessage* requests
@@ -150,7 +151,7 @@ struct Request {
      * @tparam Archive archive type
      * @param ar archive
      */
-    template<class Archive>
+    template <class Archive>
     void serialize(Archive& ar) {
         ar(message, topic, type);
     }
@@ -162,7 +163,8 @@ struct Request {
  * messaging protocol.
  */
 struct Response {
-    /// Message in response. Can be empty (for POST-responses) so it is optional.
+    /// Message in response. Can be empty (for POST-responses) so it is
+    /// optional.
     std::optional<Message> message;
 
     /// Response main message corresponding to messaging protocol.
@@ -173,12 +175,11 @@ struct Response {
      * @tparam Archive archive type
      * @param ar archive
      */
-    template<class Archive>
+    template <class Archive>
     void serialize(Archive& ar) {
         ar(message, type);
     }
 };
-
 
 }  // namespace havka
 

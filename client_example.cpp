@@ -36,7 +36,8 @@ int main(int argc, char* argv[]) {
             /// GetMessageBlocking - if queue is empty, client waits for message
             /// GetMessageNonblocking - if queue is empty,
             ///                         client returns std::nullopt
-            out = havka->getMessage("1234", havka::RequestType::GetMessageBlocking);
+            out = havka->getMessage("1234",
+                                    havka::RequestType::GetMessageBlocking);
 
             /// out->data is an std::string object with message.
             /// Can be interpreted just as bytes sequence.

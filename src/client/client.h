@@ -31,14 +31,15 @@ using tcp = boost::asio::ip::tcp;
  * ... connection is successful ...
  * Message message1;
  * ... fill message ...
- * if (!client.postMessage(message1, "some tag", RequestType::PostMessageSafe)) {
+ * if (!client.postMessage(message1, "some tag", RequestType::PostMessageSafe))
+ * {
  *      ... error while posting ...
  * }
  * ... posting is successful ...
  * auto message2 = client.getMessage("some other tag",
  *                                   Request::GetMessageNonblocking);
  * @endcode
-*/
+ */
 class BrokerClient {
 public:
     BrokerClient() = delete;
@@ -50,8 +51,8 @@ public:
      * @param maxBufferSize max size for buffer (aka max message size) in bytes
      */
     explicit BrokerClient(const net::ip::address& serverAddress,
-                         unsigned short serverPort,
-                         std::size_t maxBufferSize = 65536){};
+                          unsigned short serverPort,
+                          std::size_t maxBufferSize = 65536){};
 
     /**
      * Establishes connection between client and server.
@@ -92,14 +93,15 @@ public:
  * ... connection is successful ...
  * Message message1;
  * ... fill message ...
- * if (!client.postMessage(message1, "some tag", RequestType::PostMessageSafe)) {
+ * if (!client.postMessage(message1, "some tag", RequestType::PostMessageSafe))
+ * {
  *      ... error while posting ...
  * }
  * ... posting is successful ...
  * auto message2 = client.getMessage("some other tag",
  *                                   Request::GetMessageNonblocking);
  * @endcode
-*/
+ */
 class BrokerSyncClient : public BrokerClient {
 public:
     BrokerSyncClient() = delete;
@@ -112,8 +114,8 @@ public:
      * (aka approximately max message size) in bytes
      */
     explicit BrokerSyncClient(const net::ip::address& serverAddress,
-                             unsigned short serverPort,
-                             std::size_t maxBufferSize = 65536);
+                              unsigned short serverPort,
+                              std::size_t maxBufferSize = 65536);
 
     /**
      * Destructor for client. Frees buffer.

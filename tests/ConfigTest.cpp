@@ -19,12 +19,12 @@ public:
     std::shared_ptr<havka::ServerConfig> serverConfig;
     std::shared_ptr<havka::ClientConfig> clientConfig;
 };
-}   // namespace
+}  // namespace
 
 TEST_F(ConfigTest, ServerConfig_NonExistingFileTest) {
-    ASSERT_DEATH(
-        serverConfig = std::make_shared<havka::ServerConfig>("non-existing-file.ext"),
-        "\\[FATAL\\] ServerConfig file does not exist");
+    ASSERT_DEATH(serverConfig = std::make_shared<havka::ServerConfig>(
+                     "non-existing-file.ext"),
+                 "\\[FATAL\\] ServerConfig file does not exist");
 }
 
 TEST_F(ConfigTest, ServerConfig_AbsentAddressTest) {
@@ -33,9 +33,9 @@ TEST_F(ConfigTest, ServerConfig_AbsentAddressTest) {
     file << "endpoint_port: 5432\n";
     file.close();
 
-    ASSERT_DEATH(
-        serverConfig = std::make_shared<havka::ServerConfig>("absent_address_config.yaml"),
-        "\\[FATAL\\] ServerConfig does not have address or port");
+    ASSERT_DEATH(serverConfig = std::make_shared<havka::ServerConfig>(
+                     "absent_address_config.yaml"),
+                 "\\[FATAL\\] ServerConfig does not have address or port");
 
     std::remove("absent_address_config.yaml");
 }
@@ -45,9 +45,9 @@ TEST_F(ConfigTest, ServerConfig_AbsentPortTest) {
     file << "endpoint_address: 127.0.0.1\n";
     file.close();
 
-    ASSERT_DEATH(
-        serverConfig = std::make_shared<havka::ServerConfig>("absent_port_config.yaml"),
-        "\\[FATAL\\] ServerConfig does not have address or port");
+    ASSERT_DEATH(serverConfig = std::make_shared<havka::ServerConfig>(
+                     "absent_port_config.yaml"),
+                 "\\[FATAL\\] ServerConfig does not have address or port");
 
     std::remove("absent_port_config.yaml");
 }
@@ -84,7 +84,8 @@ TEST_F(ConfigTest, ServerConfig_CorrectFieldsTest2) {
     file.close();
 
     serverConfig = std::make_shared<havka::ServerConfig>("config_test_2.yaml");
-    ASSERT_EQ(serverConfig->getAddress(), net::ip::make_address("25.255.0.130"));
+    ASSERT_EQ(serverConfig->getAddress(),
+              net::ip::make_address("25.255.0.130"));
     ASSERT_EQ(serverConfig->getPort(), 0546);
     ASSERT_EQ(serverConfig->getStorageType(), StorageType::RAM);
     ASSERT_EQ(serverConfig->getQueueType(), QueueType::MutexQueue);
@@ -132,12 +133,10 @@ TEST_F(ConfigTest, ServerConfig_DefaultFieldsTest1) {
     std::remove("default_test.yaml");
 }
 
-
-
 TEST_F(ConfigTest, ClientConfig_NonExistingFileTest) {
-    ASSERT_DEATH(
-        clientConfig = std::make_shared<havka::ClientConfig>("non-existing-file.ext"),
-        "\\[FATAL\\] ClientConfig file does not exist");
+    ASSERT_DEATH(clientConfig = std::make_shared<havka::ClientConfig>(
+                     "non-existing-file.ext"),
+                 "\\[FATAL\\] ClientConfig file does not exist");
 }
 
 TEST_F(ConfigTest, ClientConfig_AbsentAddressTest) {
@@ -146,9 +145,9 @@ TEST_F(ConfigTest, ClientConfig_AbsentAddressTest) {
     file << "server_port: 5432\n";
     file.close();
 
-    ASSERT_DEATH(
-        clientConfig = std::make_shared<havka::ClientConfig>("absent_address_config.yaml"),
-        "\\[FATAL\\] ClientConfig does not have address or port");
+    ASSERT_DEATH(clientConfig = std::make_shared<havka::ClientConfig>(
+                     "absent_address_config.yaml"),
+                 "\\[FATAL\\] ClientConfig does not have address or port");
 
     std::remove("absent_address_config.yaml");
 }
@@ -158,9 +157,9 @@ TEST_F(ConfigTest, ClientConfig_AbsentPortTest) {
     file << "server_address: 127.0.0.1\n";
     file.close();
 
-    ASSERT_DEATH(
-        clientConfig = std::make_shared<havka::ClientConfig>("absent_port_config.yaml"),
-        "\\[FATAL\\] ClientConfig does not have address or port");
+    ASSERT_DEATH(clientConfig = std::make_shared<havka::ClientConfig>(
+                     "absent_port_config.yaml"),
+                 "\\[FATAL\\] ClientConfig does not have address or port");
 
     std::remove("absent_port_config.yaml");
 }
@@ -172,7 +171,8 @@ TEST_F(ConfigTest, ClientConfig_CorrectFieldsTest1) {
     file.close();
 
     clientConfig = std::make_shared<havka::ClientConfig>("config_test_1.yaml");
-    ASSERT_EQ(clientConfig->getServerAddress(), net::ip::make_address("127.0.0.1"));
+    ASSERT_EQ(clientConfig->getServerAddress(),
+              net::ip::make_address("127.0.0.1"));
     ASSERT_EQ(clientConfig->getServerPort(), 9090);
 
     std::remove("config_test_1.yaml");

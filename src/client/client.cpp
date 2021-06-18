@@ -3,8 +3,8 @@
 namespace havka {
 
 BrokerSyncClient::BrokerSyncClient(const net::ip::address &serverAddress,
-                                 unsigned short serverPort,
-                                 std::size_t maxBufferSize)
+                                   unsigned short serverPort,
+                                   std::size_t maxBufferSize)
     : BrokerClient(serverAddress, serverPort),
       endpoint_(serverAddress, serverPort),
       ioc_(std::make_shared<net::io_context>()),
@@ -33,8 +33,8 @@ bool BrokerSyncClient::connect() {
 }
 
 bool BrokerSyncClient::postMessage(const Message &message,
-                                  const std::string &tag,
-                                  RequestType postType) {
+                                   const std::string &tag,
+                                   RequestType postType) {
     if (!isConnected_) {
         return false;
     }
@@ -64,7 +64,7 @@ bool BrokerSyncClient::postMessage(const Message &message,
 }
 
 std::optional<Message> BrokerSyncClient::getMessage(const std::string &tag,
-                                                   RequestType getType) {
+                                                    RequestType getType) {
     if (!isConnected_) {
         return std::nullopt;
     }

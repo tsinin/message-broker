@@ -57,7 +57,6 @@ public:
      */
     void sendEmergedMessage(const Message& message);
 
-
 private:
     std::shared_ptr<IMessageStorage> storage_;
     tcp::socket socket_;
@@ -95,7 +94,6 @@ private:
      */
     void createPostResponse_();
 
-
     /**
      * Creates response on unknown request
      */
@@ -107,10 +105,9 @@ private:
      */
     void writeResponse_();
 
-
     void waitAccept_();
 };
 
-}
+}  // namespace havka
 
 #endif  // HAVKA_SRC_SERVER_NET_H_

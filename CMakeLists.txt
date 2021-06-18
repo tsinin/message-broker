@@ -26,7 +26,8 @@ include_directories(${GTEST_INCLUDE_DIRS})
 include_directories(src)
 
 
-add_executable(server server.cpp
+add_executable(server
+        server_example.cpp
         src/server/server.cpp
         src/server/net.cpp
         src/server/queue.cpp
@@ -38,7 +39,8 @@ set_target_properties(server PROPERTIES COMPILE_FLAGS "-DMONITORING")
 target_link_libraries(server ${BOOST_LIBS} ${YAML_CPP_LIBRARIES})
 
 
-add_executable(client client.cpp
+add_executable(client
+        client_example.cpp
         src/client/client.cpp
         src/client/client_config.cpp
         src/util.cpp

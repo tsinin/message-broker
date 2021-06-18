@@ -40,14 +40,15 @@ public:
             tags.push_back(random_string(5));
         }
 
-        std::vector<std::vector<std::pair<std::string, havka::Message>>> to_storage(
-            threadsNumber);
-        std::vector<std::vector<std::pair<std::string, havka::Message>>> from_storage(
-            threadsNumber);
+        std::vector<std::vector<std::pair<std::string, havka::Message>>>
+            to_storage(threadsNumber);
+        std::vector<std::vector<std::pair<std::string, havka::Message>>>
+            from_storage(threadsNumber);
         havka::Message tmpMessage;
         for (int i = 0; i < threadsNumber; ++i) {
             for (int j = 0; j < elementsForThread; ++j) {
-                tmpMessage.setData(random_string(10).c_str(), 10, havka::MessageDataType::Text);
+                tmpMessage.setData(random_string(10).c_str(), 10,
+                                   havka::MessageDataType::Text);
                 to_storage[i].push_back(
                     {tags[rand() % tagsNumber], tmpMessage});
             }
@@ -62,7 +63,8 @@ public:
         auto from_storage_thread = [&](int index) {
             std::optional<havka::Message> el;
             for (const auto& tag : tags) {
-                while ((el = storage->getMessageNonblocking(tag)) != std::nullopt) {
+                while ((el = storage->getMessageNonblocking(tag)) !=
+                       std::nullopt) {
                     from_storage[index].emplace_back(tag, *el);
                 }
             }
@@ -108,21 +110,23 @@ public:
      */
     void testThreadSafetyDifficult(int threadsNumber, int elementsForThread,
                                    int tagsNumber) {
-        storage = havka::createMessageStorage(StorageType::RAM, QueueType::MutexQueue);
+        storage = havka::createMessageStorage(StorageType::RAM,
+                                              QueueType::MutexQueue);
         std::vector<std::string> tags;
         tags.reserve(tagsNumber);
         for (int i = 0; i < tagsNumber; ++i) {
             tags.push_back(random_string(5));
         }
 
-        std::vector<std::vector<std::pair<std::string, havka::Message>>> to_storage(
-            threadsNumber);
-        std::vector<std::vector<std::pair<std::string, havka::Message>>> from_storage(
-            threadsNumber);
+        std::vector<std::vector<std::pair<std::string, havka::Message>>>
+            to_storage(threadsNumber);
+        std::vector<std::vector<std::pair<std::string, havka::Message>>>
+            from_storage(threadsNumber);
         havka::Message tmpMessage;
         for (int i = 0; i < threadsNumber; ++i) {
             for (int j = 0; j < elementsForThread; ++j) {
-                tmpMessage.setData(random_string(10).c_str(), 10, havka::MessageDataType::Text);
+                tmpMessage.setData(random_string(10).c_str(), 10,
+                                   havka::MessageDataType::Text);
                 to_storage[i].push_back(
                     {tags[rand() % tagsNumber], tmpMessage});
             }
@@ -133,8 +137,8 @@ public:
                 storage->postMessage(el.second, el.first);
 
                 std::optional<havka::Message> from_storage_el;
-                while ((from_storage_el = storage->getMessageNonblocking(el.first)) ==
-                       std::nullopt) {
+                while ((from_storage_el = storage->getMessageNonblocking(
+                            el.first)) == std::nullopt) {
                 }
                 from_storage[index].emplace_back(el.first, *from_storage_el);
             }
@@ -168,7 +172,8 @@ public:
 }  // namespace
 
 TEST_F(StorageTest, RamMutexStorage_SimpleSingleThreadTest1) {
-    storage = havka::createMessageStorage(StorageType::RAM, QueueType::MutexQueue);
+    storage =
+        havka::createMessageStorage(StorageType::RAM, QueueType::MutexQueue);
 
     ASSERT_EQ(storage->getMessageNonblocking("tag1"), std::nullopt);
     ASSERT_EQ(storage->getMessageNonblocking("tag2"), std::nullopt);
@@ -189,7 +194,8 @@ TEST_F(StorageTest, RamMutexStorage_SimpleSingleThreadTest1) {
 }
 
 TEST_F(StorageTest, RamMutexStorage_SimpleSingleThreadTest2) {
-    storage = havka::createMessageStorage(StorageType::RAM, QueueType::MutexQueue);
+    storage =
+        havka::createMessageStorage(StorageType::RAM, QueueType::MutexQueue);
 
     ASSERT_EQ(storage->getMessageNonblocking("tag1"), std::nullopt);
     ASSERT_EQ(storage->getMessageNonblocking("tag2"), std::nullopt);
@@ -219,7 +225,8 @@ TEST_F(StorageTest, RamMutexStorage_SimpleSingleThreadTest2) {
 }
 
 TEST_F(StorageTest, RamMutexStorage_LargeSingleThreadTest) {
-    storage = havka::createMessageStorage(StorageType::RAM, QueueType::MutexQueue);
+    storage =
+        havka::createMessageStorage(StorageType::RAM, QueueType::MutexQueue);
 
     std::unordered_map<std::string, std::queue<havka::Message>> queue;
 
@@ -235,7 +242,8 @@ TEST_F(StorageTest, RamMutexStorage_LargeSingleThreadTest) {
 
     for (int i = 0; i < START_ITEMS; ++i) {
         havka::Message message;
-        message.setData(random_string(10).c_str(), 10, havka::MessageDataType::Text);
+        message.setData(random_string(10).c_str(), 10,
+                        havka::MessageDataType::Text);
         std::string tag = tags[rand() % TAGS];
 
         queue[tag].push(message);
@@ -247,14 +255,16 @@ TEST_F(StorageTest, RamMutexStorage_LargeSingleThreadTest) {
         std::string tag = tags[rand() % TAGS];
         if (rand() % 2) {  // post message
             havka::Message message;
-            message.setData(random_string(10).c_str(), 10, havka::MessageDataType::Text);
+            message.setData(random_string(10).c_str(), 10,
+                            havka::MessageDataType::Text);
             queue[tag].push(message);
             storage->postMessage(message, tag);
         } else {  // get message
             if (queue[tag].empty()) {
                 ASSERT_EQ(storage->getMessageNonblocking(tag), std::nullopt);
             } else {
-                ASSERT_EQ(storage->getMessageNonblocking(tag), queue[tag].front());
+                ASSERT_EQ(storage->getMessageNonblocking(tag),
+                          queue[tag].front());
                 queue[tag].pop();
             }
         }

@@ -40,20 +40,21 @@ void Connection::sendEmergedMessage(const Message &message) {
 
     auto self = shared_from_this();
 
-    socket_.async_write_some(boost::asio::buffer(buffer_, bufSize_),
-                             [self](boost::system::error_code ec, std::size_t len) {
-                                 if (!ec) {
-                                     self->waitAccept_();
-                                 }
-                             });
+    socket_.async_write_some(
+        boost::asio::buffer(buffer_, bufSize_),
+        [self](boost::system::error_code ec, std::size_t len) {
+            if (!ec) {
+                self->waitAccept_();
+            }
+        });
 }
 
 void Connection::deserializeRequest_() {
-//    for (int i = 0; i < bufSize_; ++i) {
-//        std::cout << std::hex << +buffer_[i] << " ";
-//    }
-//    std::cout << '\n';
-//    std::cout << bufSize_ << '\n';
+    //    for (int i = 0; i < bufSize_; ++i) {
+    //        std::cout << std::hex << +buffer_[i] << " ";
+    //    }
+    //    std::cout << '\n';
+    //    std::cout << bufSize_ << '\n';
 
     std::string buffer_str(buffer_, bufSize_);
     std::stringstream iss(buffer_str);
@@ -164,12 +165,10 @@ void Connection::writeResponse_() {
     };
 
     if (request_.type == RequestType::PostMessageSafe) {
-
         socket_.async_write_some(boost::asio::buffer(buffer_, bufSize_),
                                  loop_handler);
 
     } else if (response_.type == ResponseType::GetSuccess) {
-
         socket_.async_write_some(boost::asio::buffer(buffer_, bufSize_),
                                  accept_handler);
 
@@ -198,13 +197,14 @@ void Connection::waitAccept_() {
                 self->deserializeRequest_();
                 LOG_INFO("Accept:\n"
                          << "...... "
-                         << getStringFromRequestType(self->request_.type) << '\n');
+                         << getStringFromRequestType(self->request_.type)
+                         << '\n');
 
-                self->socket_.async_write_some(boost::asio::buffer(self->buffer_, 1),
-                                         [self](boost::system::error_code ec, std::size_t length) {
-                                           self->start();
-                                         });
-
+                self->socket_.async_write_some(
+                    boost::asio::buffer(self->buffer_, 1),
+                    [self](boost::system::error_code ec, std::size_t length) {
+                        self->start();
+                    });
             }
         });
 }

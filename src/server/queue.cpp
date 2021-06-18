@@ -3,6 +3,7 @@
 //
 
 #include "server/queue.h"
+
 #include "server/net.h"
 
 namespace havka {
@@ -38,14 +39,14 @@ std::shared_ptr<IQueue<Message>> createMessageQueue(QueueType queueType) {
     }
 }
 
-std::shared_ptr<IQueue<std::shared_ptr<Connection>>> createConnectionQueue(QueueType queueType) {
+std::shared_ptr<IQueue<std::shared_ptr<Connection>>> createConnectionQueue(
+    QueueType queueType) {
     switch (queueType) {
         case QueueType::MutexQueue: {
             return std::make_shared<MutexQueue<std::shared_ptr<Connection>>>();
         }
     }
 }
-
 
 /**
  * Templates for ability of using MutexQueue with different

@@ -15,7 +15,7 @@ inline QueueType getQueueTypeFromString(const std::string& name) {
         return QueueType::MutexQueue;
     } else {
         LOG_ERROR("Returning QueueType::MutexQueue from string '" << name
-                                                                 << "'");
+                                                                  << "'");
         return QueueType::MutexQueue;
     }
 }
