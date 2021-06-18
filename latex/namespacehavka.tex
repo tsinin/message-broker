@@ -1,0 +1,220 @@
+\hypertarget{namespacehavka}{}\doxysection{havka Namespace Reference}
+\label{namespacehavka}\index{havka@{havka}}
+
+
+Namespace with all classes of havka library.  
+
+
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacehavka_1_1time__measure}{time\+\_\+measure}}
+\begin{DoxyCompactList}\small\item\em Namespace with utility functions to measure time. Not recommended to use. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classhavka_1_1BrokerClient}{Broker\+Client}}
+\begin{DoxyCompactList}\small\item\em Client interface for sending requests to the message broker server. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classhavka_1_1BrokerServer}{Broker\+Server}}
+\begin{DoxyCompactList}\small\item\em Class is responsible for handling new clients and creating new Connections. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classhavka_1_1BrokerSyncClient}{Broker\+Sync\+Client}}
+\begin{DoxyCompactList}\small\item\em Implementation of interface for message broker client. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classhavka_1_1ClientConfig}{Client\+Config}}
+\begin{DoxyCompactList}\small\item\em Class for reading client config from file. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classhavka_1_1Connection}{Connection}}
+\begin{DoxyCompactList}\small\item\em Class is responsible for handling requests from one client. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classhavka_1_1IMessageStorage}{I\+Message\+Storage}}
+\begin{DoxyCompactList}\small\item\em Storage interface for server. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classhavka_1_1IQueue}{I\+Queue}}
+\begin{DoxyCompactList}\small\item\em Queue interface. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structhavka_1_1Message}{Message}}
+\begin{DoxyCompactList}\small\item\em structure for message interface, stores data and its type \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classhavka_1_1MutexQueue}{Mutex\+Queue}}
+\begin{DoxyCompactList}\small\item\em Implementation of queue interface with mutex. Thread-\/safe. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classhavka_1_1RamStorage}{Ram\+Storage}}
+\begin{DoxyCompactList}\small\item\em Implementation of storage interface, uses R\+AM. Thread-\/safe. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structhavka_1_1Request}{Request}}
+\begin{DoxyCompactList}\small\item\em Structure of client request. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structhavka_1_1Response}{Response}}
+\begin{DoxyCompactList}\small\item\em Structure of server response. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classhavka_1_1ServerConfig}{Server\+Config}}
+\begin{DoxyCompactList}\small\item\em Class for reading server config from file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespacehavka_a0d341763debb8c9ae37fb4f069ec90f9}{tcp}} = boost\+::asio\+::ip\+::tcp
+\begin{DoxyCompactList}\small\item\em from $<$boost/asio.\+hpp$>$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacehavka_ac272d45c1906b670a2d032705507b6f5}\label{namespacehavka_ac272d45c1906b670a2d032705507b6f5}} 
+enum \mbox{\hyperlink{namespacehavka_ac272d45c1906b670a2d032705507b6f5}{Message\+Data\+Type}} \{ {\bfseries Text}, 
+{\bfseries Binary}
+ \}
+\begin{DoxyCompactList}\small\item\em Type of data in the message. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacehavka_adbdab8f2725c23c4f65702464ebfbab6}{Request\+Type}} \{ \mbox{\hyperlink{namespacehavka_adbdab8f2725c23c4f65702464ebfbab6a3a6299873f16283d6669ec24d9b396bf}{Post\+Message\+Safe}}, 
+\mbox{\hyperlink{namespacehavka_adbdab8f2725c23c4f65702464ebfbab6a2e545916ae0e0b74f26c3149b402924f}{Get\+Message\+Blocking}}, 
+\mbox{\hyperlink{namespacehavka_adbdab8f2725c23c4f65702464ebfbab6a22d5a3824acde13c394828fe76422edb}{Get\+Message\+Nonblocking}}, 
+\mbox{\hyperlink{namespacehavka_adbdab8f2725c23c4f65702464ebfbab6a4f9269a805621ec30eba79df821cd562}{Delivery\+Confirmation}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum for request type. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacehavka_a97e39fd866c1a17f1138eda0c70e283a}{Response\+Type}} \{ \newline
+\mbox{\hyperlink{namespacehavka_a97e39fd866c1a17f1138eda0c70e283aaf02bc5df0f80bdb1d00f9ffd8672a6bd}{Post\+Success}}, 
+\mbox{\hyperlink{namespacehavka_a97e39fd866c1a17f1138eda0c70e283aa317974e766d97a40928b54592f1fb337}{Error\+While\+Posting}}, 
+\mbox{\hyperlink{namespacehavka_a97e39fd866c1a17f1138eda0c70e283aa897c9f4be23e10d9e720e4d22966648c}{Get\+Success}}, 
+\mbox{\hyperlink{namespacehavka_a97e39fd866c1a17f1138eda0c70e283aa548acd25a7391a4b873451b2b8e0a55d}{Empty\+Topic}}, 
+\newline
+\mbox{\hyperlink{namespacehavka_a97e39fd866c1a17f1138eda0c70e283aaef5231cb87c04bcee067ccda98ace5fa}{Error}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum for response type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{namespacehavka_a5892c158e7f9245afac4c89fe599ab7b}{get\+String\+From\+Request\+Type}} (\mbox{\hyperlink{namespacehavka_adbdab8f2725c23c4f65702464ebfbab6}{Request\+Type}} request\+Type)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classhavka_1_1IQueue}{I\+Queue}}$<$ \mbox{\hyperlink{structhavka_1_1Message}{Message}} $>$ $>$ \mbox{\hyperlink{namespacehavka_a713f0ac4f59402e8c04cc26c28f3eb2d}{create\+Message\+Queue}} (Queue\+Type queue\+Type)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classhavka_1_1IQueue}{I\+Queue}}$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classhavka_1_1Connection}{Connection}} $>$ $>$ $>$ \mbox{\hyperlink{namespacehavka_aa7573c20bdff79dd24c9eb3858eacc8c}{create\+Connection\+Queue}} (Queue\+Type queue\+Type)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classhavka_1_1IMessageStorage}{I\+Message\+Storage}} $>$ \mbox{\hyperlink{namespacehavka_a5f29b5e6663bf6e74bb1fa8fb3cefb53}{create\+Message\+Storage}} (Storage\+Type storage\+Type, Queue\+Type queue\+Type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Namespace with all classes of havka library. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespacehavka_a0d341763debb8c9ae37fb4f069ec90f9}\label{namespacehavka_a0d341763debb8c9ae37fb4f069ec90f9}} 
+\index{havka@{havka}!tcp@{tcp}}
+\index{tcp@{tcp}!havka@{havka}}
+\doxysubsubsection{\texorpdfstring{tcp}{tcp}}
+{\footnotesize\ttfamily typedef boost\+::asio\+::ip\+::tcp \mbox{\hyperlink{namespacehavka_a0d341763debb8c9ae37fb4f069ec90f9}{havka\+::tcp}}}
+
+
+
+from $<$boost/asio.\+hpp$>$ 
+
+from $<$boost/asio/ip/tcp.\+hpp$>$ 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespacehavka_adbdab8f2725c23c4f65702464ebfbab6}\label{namespacehavka_adbdab8f2725c23c4f65702464ebfbab6}} 
+\index{havka@{havka}!RequestType@{RequestType}}
+\index{RequestType@{RequestType}!havka@{havka}}
+\doxysubsubsection{\texorpdfstring{RequestType}{RequestType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacehavka_adbdab8f2725c23c4f65702464ebfbab6}{havka\+::\+Request\+Type}}}
+
+
+
+Enum for request type. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PostMessageSafe@{PostMessageSafe}!havka@{havka}}\index{havka@{havka}!PostMessageSafe@{PostMessageSafe}}}\mbox{\Hypertarget{namespacehavka_adbdab8f2725c23c4f65702464ebfbab6a3a6299873f16283d6669ec24d9b396bf}\label{namespacehavka_adbdab8f2725c23c4f65702464ebfbab6a3a6299873f16283d6669ec24d9b396bf}} 
+Post\+Message\+Safe&Awaiting the confirmation from broker that message is posted without errors \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GetMessageBlocking@{GetMessageBlocking}!havka@{havka}}\index{havka@{havka}!GetMessageBlocking@{GetMessageBlocking}}}\mbox{\Hypertarget{namespacehavka_adbdab8f2725c23c4f65702464ebfbab6a2e545916ae0e0b74f26c3149b402924f}\label{namespacehavka_adbdab8f2725c23c4f65702464ebfbab6a2e545916ae0e0b74f26c3149b402924f}} 
+Get\+Message\+Blocking&If queue is empty, wait for message. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GetMessageNonblocking@{GetMessageNonblocking}!havka@{havka}}\index{havka@{havka}!GetMessageNonblocking@{GetMessageNonblocking}}}\mbox{\Hypertarget{namespacehavka_adbdab8f2725c23c4f65702464ebfbab6a22d5a3824acde13c394828fe76422edb}\label{namespacehavka_adbdab8f2725c23c4f65702464ebfbab6a22d5a3824acde13c394828fe76422edb}} 
+Get\+Message\+Nonblocking&If queue is empty, return. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DeliveryConfirmation@{DeliveryConfirmation}!havka@{havka}}\index{havka@{havka}!DeliveryConfirmation@{DeliveryConfirmation}}}\mbox{\Hypertarget{namespacehavka_adbdab8f2725c23c4f65702464ebfbab6a4f9269a805621ec30eba79df821cd562}\label{namespacehavka_adbdab8f2725c23c4f65702464ebfbab6a4f9269a805621ec30eba79df821cd562}} 
+Delivery\+Confirmation&Being sent to server after every response with \mbox{\hyperlink{structhavka_1_1Message}{Message}} \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespacehavka_a97e39fd866c1a17f1138eda0c70e283a}\label{namespacehavka_a97e39fd866c1a17f1138eda0c70e283a}} 
+\index{havka@{havka}!ResponseType@{ResponseType}}
+\index{ResponseType@{ResponseType}!havka@{havka}}
+\doxysubsubsection{\texorpdfstring{ResponseType}{ResponseType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacehavka_a97e39fd866c1a17f1138eda0c70e283a}{havka\+::\+Response\+Type}}}
+
+
+
+Enum for response type. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PostSuccess@{PostSuccess}!havka@{havka}}\index{havka@{havka}!PostSuccess@{PostSuccess}}}\mbox{\Hypertarget{namespacehavka_a97e39fd866c1a17f1138eda0c70e283aaf02bc5df0f80bdb1d00f9ffd8672a6bd}\label{namespacehavka_a97e39fd866c1a17f1138eda0c70e283aaf02bc5df0f80bdb1d00f9ffd8672a6bd}} 
+Post\+Success&Post request was successfully processed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ErrorWhilePosting@{ErrorWhilePosting}!havka@{havka}}\index{havka@{havka}!ErrorWhilePosting@{ErrorWhilePosting}}}\mbox{\Hypertarget{namespacehavka_a97e39fd866c1a17f1138eda0c70e283aa317974e766d97a40928b54592f1fb337}\label{namespacehavka_a97e39fd866c1a17f1138eda0c70e283aa317974e766d97a40928b54592f1fb337}} 
+Error\+While\+Posting&Being sent only if posting was safe (Request\+Type\+::\+Post\+Message\+Safe) and error occured \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GetSuccess@{GetSuccess}!havka@{havka}}\index{havka@{havka}!GetSuccess@{GetSuccess}}}\mbox{\Hypertarget{namespacehavka_a97e39fd866c1a17f1138eda0c70e283aa897c9f4be23e10d9e720e4d22966648c}\label{namespacehavka_a97e39fd866c1a17f1138eda0c70e283aa897c9f4be23e10d9e720e4d22966648c}} 
+Get\+Success&Get request was successfully processed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EmptyTopic@{EmptyTopic}!havka@{havka}}\index{havka@{havka}!EmptyTopic@{EmptyTopic}}}\mbox{\Hypertarget{namespacehavka_a97e39fd866c1a17f1138eda0c70e283aa548acd25a7391a4b873451b2b8e0a55d}\label{namespacehavka_a97e39fd866c1a17f1138eda0c70e283aa548acd25a7391a4b873451b2b8e0a55d}} 
+Empty\+Topic&If get-\/request was blocking, connection is alive and waiting for a message. If get-\/request was non-\/blocking, std\+::nullopt is returned \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error@{Error}!havka@{havka}}\index{havka@{havka}!Error@{Error}}}\mbox{\Hypertarget{namespacehavka_a97e39fd866c1a17f1138eda0c70e283aaef5231cb87c04bcee067ccda98ace5fa}\label{namespacehavka_a97e39fd866c1a17f1138eda0c70e283aaef5231cb87c04bcee067ccda98ace5fa}} 
+Error&Unknown error. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacehavka_aa7573c20bdff79dd24c9eb3858eacc8c}\label{namespacehavka_aa7573c20bdff79dd24c9eb3858eacc8c}} 
+\index{havka@{havka}!createConnectionQueue@{createConnectionQueue}}
+\index{createConnectionQueue@{createConnectionQueue}!havka@{havka}}
+\doxysubsubsection{\texorpdfstring{createConnectionQueue()}{createConnectionQueue()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classhavka_1_1IQueue}{I\+Queue}}$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classhavka_1_1Connection}{Connection}} $>$ $>$ $>$ havka\+::create\+Connection\+Queue (\begin{DoxyParamCaption}\item[{Queue\+Type}]{queue\+Type }\end{DoxyParamCaption})}
+
+Creates new connection queue of shared pointers to connections with given type 
+\begin{DoxyParams}{Parameters}
+{\em queue\+Type} & queue type to create with \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+shared pointer to created queue 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacehavka_a713f0ac4f59402e8c04cc26c28f3eb2d}\label{namespacehavka_a713f0ac4f59402e8c04cc26c28f3eb2d}} 
+\index{havka@{havka}!createMessageQueue@{createMessageQueue}}
+\index{createMessageQueue@{createMessageQueue}!havka@{havka}}
+\doxysubsubsection{\texorpdfstring{createMessageQueue()}{createMessageQueue()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classhavka_1_1IQueue}{I\+Queue}}$<$ \mbox{\hyperlink{structhavka_1_1Message}{Message}} $>$ $>$ havka\+::create\+Message\+Queue (\begin{DoxyParamCaption}\item[{Queue\+Type}]{queue\+Type }\end{DoxyParamCaption})}
+
+Creates new message queue with given type 
+\begin{DoxyParams}{Parameters}
+{\em queue\+Type} & queue type to create with \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+shared pointer to created queue 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacehavka_a5f29b5e6663bf6e74bb1fa8fb3cefb53}\label{namespacehavka_a5f29b5e6663bf6e74bb1fa8fb3cefb53}} 
+\index{havka@{havka}!createMessageStorage@{createMessageStorage}}
+\index{createMessageStorage@{createMessageStorage}!havka@{havka}}
+\doxysubsubsection{\texorpdfstring{createMessageStorage()}{createMessageStorage()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classhavka_1_1IMessageStorage}{I\+Message\+Storage}} $>$ havka\+::create\+Message\+Storage (\begin{DoxyParamCaption}\item[{Storage\+Type}]{storage\+Type,  }\item[{Queue\+Type}]{queue\+Type }\end{DoxyParamCaption})}
+
+Creates new message storage of given type with queues of given type 
+\begin{DoxyParams}{Parameters}
+{\em storage\+Type} & type of storage to create \\
+\hline
+{\em queue\+Type} & type of queue to use \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+shared pointer on new storage 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacehavka_a5892c158e7f9245afac4c89fe599ab7b}\label{namespacehavka_a5892c158e7f9245afac4c89fe599ab7b}} 
+\index{havka@{havka}!getStringFromRequestType@{getStringFromRequestType}}
+\index{getStringFromRequestType@{getStringFromRequestType}!havka@{havka}}
+\doxysubsubsection{\texorpdfstring{getStringFromRequestType()}{getStringFromRequestType()}}
+{\footnotesize\ttfamily std\+::string havka\+::get\+String\+From\+Request\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacehavka_adbdab8f2725c23c4f65702464ebfbab6}{Request\+Type}}}]{request\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get string name of request type from Request\+Type object 
+\begin{DoxyParams}{Parameters}
+{\em request\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string name of type 
+\end{DoxyReturn}

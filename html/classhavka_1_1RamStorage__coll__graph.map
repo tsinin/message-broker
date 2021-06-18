@@ -1,0 +1,4 @@
+<map id="havka::RamStorage" name="havka::RamStorage">
+<area shape="rect" id="node1" title="Implementation of storage interface, uses RAM. Thread&#45;safe." alt="" coords="21,80,171,107"/>
+<area shape="rect" id="node2" href="$classhavka_1_1IMessageStorage.html" title="Storage interface for server." alt="" coords="5,5,187,32"/>
+</map>

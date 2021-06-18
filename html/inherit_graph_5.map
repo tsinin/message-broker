@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classhavka_1_1IQueue.html" title="Queue interface." alt="" coords="5,5,159,32"/>
+<area shape="rect" id="node2" href="$classhavka_1_1MutexQueue.html" title="Implementation of queue interface with mutex. Thread&#45;safe." alt="" coords="207,5,397,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="havka::BrokerSyncClient" name="havka::BrokerSyncClient">
+<area shape="rect" id="node1" title="Implementation of interface for message broker client." alt="" coords="5,80,185,107"/>
+<area shape="rect" id="node2" href="$classhavka_1_1BrokerClient.html" title="Client interface for sending requests to the message broker server." alt="" coords="21,5,170,32"/>
+</map>

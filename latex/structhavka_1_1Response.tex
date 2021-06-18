@@ -1,0 +1,55 @@
+\hypertarget{structhavka_1_1Response}{}\doxysection{havka\+::Response Struct Reference}
+\label{structhavka_1_1Response}\index{havka::Response@{havka::Response}}
+
+
+Structure of server response.  
+
+
+
+
+{\ttfamily \#include $<$message.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{structhavka_1_1Response_a98dd167aa4c3fec0335823c313e10dae}{serialize}} (Archive \&ar)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structhavka_1_1Response_aa3a5c8d9140954c6fe2329c2ad4a5ac5}\label{structhavka_1_1Response_aa3a5c8d9140954c6fe2329c2ad4a5ac5}} 
+std\+::optional$<$ \mbox{\hyperlink{structhavka_1_1Message}{Message}} $>$ \mbox{\hyperlink{structhavka_1_1Response_aa3a5c8d9140954c6fe2329c2ad4a5ac5}{message}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structhavka_1_1Message}{Message}} in response. Can be empty (for P\+O\+S\+T-\/responses) so it is optional. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structhavka_1_1Response_a5c2c62a8dcbb7d893b5c0d1f3cb61f9f}\label{structhavka_1_1Response_a5c2c62a8dcbb7d893b5c0d1f3cb61f9f}} 
+\mbox{\hyperlink{namespacehavka_a97e39fd866c1a17f1138eda0c70e283a}{Response\+Type}} \mbox{\hyperlink{structhavka_1_1Response_a5c2c62a8dcbb7d893b5c0d1f3cb61f9f}{type}} \{Response\+Type\+::\+Error\}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structhavka_1_1Response}{Response}} main message corresponding to messaging protocol. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure of server response. 
+
+Consists of all information about response in format corresponding to messaging protocol. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structhavka_1_1Response_a98dd167aa4c3fec0335823c313e10dae}\label{structhavka_1_1Response_a98dd167aa4c3fec0335823c313e10dae}} 
+\index{havka::Response@{havka::Response}!serialize@{serialize}}
+\index{serialize@{serialize}!havka::Response@{havka::Response}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void havka\+::\+Response\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Technical function to use cereal library for packing \mbox{\hyperlink{structhavka_1_1Message}{Message}} into archive 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Archive} & archive type \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & archive \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/message.\+hpp\end{DoxyCompactItemize}

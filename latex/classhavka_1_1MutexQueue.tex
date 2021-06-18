@@ -1,0 +1,110 @@
+\hypertarget{classhavka_1_1MutexQueue}{}\doxysection{havka\+::Mutex\+Queue$<$ T $>$ Class Template Reference}
+\label{classhavka_1_1MutexQueue}\index{havka::MutexQueue$<$ T $>$@{havka::MutexQueue$<$ T $>$}}
+
+
+Implementation of queue interface with mutex. Thread-\/safe.  
+
+
+
+
+{\ttfamily \#include $<$queue.\+h$>$}
+
+
+
+Inheritance diagram for havka\+::Mutex\+Queue$<$ T $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classhavka_1_1MutexQueue__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for havka\+::Mutex\+Queue$<$ T $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classhavka_1_1MutexQueue__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classhavka_1_1MutexQueue_a50724a6529ea06fb841b6b5a3a9ea702}\label{classhavka_1_1MutexQueue_a50724a6529ea06fb841b6b5a3a9ea702}} 
+{\bfseries Mutex\+Queue} (const \mbox{\hyperlink{classhavka_1_1MutexQueue}{Mutex\+Queue}}$<$ T $>$ \&)=delete
+\item 
+\mbox{\Hypertarget{classhavka_1_1MutexQueue_a345c5be7b28b46b5d2aaae42770b8d23}\label{classhavka_1_1MutexQueue_a345c5be7b28b46b5d2aaae42770b8d23}} 
+\mbox{\hyperlink{classhavka_1_1MutexQueue}{Mutex\+Queue}} \& {\bfseries operator=} (const \mbox{\hyperlink{classhavka_1_1MutexQueue}{Mutex\+Queue}}$<$ T $>$ \&)=delete
+\item 
+unsigned long \mbox{\hyperlink{classhavka_1_1MutexQueue_aacec5d0f5183d7a547c97c5461772037}{size}} () const override
+\item 
+std\+::optional$<$ T $>$ \mbox{\hyperlink{classhavka_1_1MutexQueue_a8245c5e58bb09732aeb95b2fa018393f}{pop}} () override
+\item 
+void \mbox{\hyperlink{classhavka_1_1MutexQueue_a8aa3f11c8772f4c44d06f020a168eaa6}{push}} (const T \&item) override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class havka\+::\+Mutex\+Queue$<$ T $>$}
+
+Implementation of queue interface with mutex. Thread-\/safe. 
+
+Class \mbox{\hyperlink{classhavka_1_1MutexQueue}{Mutex\+Queue}} implements \mbox{\hyperlink{classhavka_1_1IQueue}{I\+Queue}} interface with thread-\/safety using mutex. Thread-\/safe. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of elements in queue \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classhavka_1_1MutexQueue_a8245c5e58bb09732aeb95b2fa018393f}\label{classhavka_1_1MutexQueue_a8245c5e58bb09732aeb95b2fa018393f}} 
+\index{havka::MutexQueue$<$ T $>$@{havka::MutexQueue$<$ T $>$}!pop@{pop}}
+\index{pop@{pop}!havka::MutexQueue$<$ T $>$@{havka::MutexQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template std\+::optional$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classhavka_1_1Connection}{Connection}} $>$ $>$ \mbox{\hyperlink{classhavka_1_1MutexQueue}{havka\+::\+Mutex\+Queue}}$<$ T $>$\+::pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets first element in the queue and removes it from the queue if queue is not empty, else returns std\+::nullopt \begin{DoxyReturn}{Returns}
+First element or std\+::nullopt if queue is empty 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classhavka_1_1IQueue_a874c04d97d8819bde5e98b395b27d479}{havka\+::\+I\+Queue$<$ T $>$}}.
+
+\mbox{\Hypertarget{classhavka_1_1MutexQueue_a8aa3f11c8772f4c44d06f020a168eaa6}\label{classhavka_1_1MutexQueue_a8aa3f11c8772f4c44d06f020a168eaa6}} 
+\index{havka::MutexQueue$<$ T $>$@{havka::MutexQueue$<$ T $>$}!push@{push}}
+\index{push@{push}!havka::MutexQueue$<$ T $>$@{havka::MutexQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template void \mbox{\hyperlink{classhavka_1_1MutexQueue}{havka\+::\+Mutex\+Queue}}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{const T \&}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Pushes new element to the queue. 
+\begin{DoxyParams}{Parameters}
+{\em item} & Element to push to the queue \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classhavka_1_1IQueue_a5b7fe55830bfb375dd363160fc6ff835}{havka\+::\+I\+Queue$<$ T $>$}}.
+
+\mbox{\Hypertarget{classhavka_1_1MutexQueue_aacec5d0f5183d7a547c97c5461772037}\label{classhavka_1_1MutexQueue_aacec5d0f5183d7a547c97c5461772037}} 
+\index{havka::MutexQueue$<$ T $>$@{havka::MutexQueue$<$ T $>$}!size@{size}}
+\index{size@{size}!havka::MutexQueue$<$ T $>$@{havka::MutexQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template unsigned long \mbox{\hyperlink{classhavka_1_1MutexQueue}{havka\+::\+Mutex\+Queue}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets current number of elements in queue \begin{DoxyReturn}{Returns}
+Number of elements
+\end{DoxyReturn}
+Templates for ability of using \mbox{\hyperlink{classhavka_1_1MutexQueue}{Mutex\+Queue}} with different 
+
+Implements \mbox{\hyperlink{classhavka_1_1IQueue_add514e6f61e1ccb06109974153f4f7bf}{havka\+::\+I\+Queue$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/server/queue.\+h\item 
+src/server/queue.\+cpp\end{DoxyCompactItemize}

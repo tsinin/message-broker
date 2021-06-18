@@ -1,0 +1,82 @@
+\hypertarget{classhavka_1_1BrokerServer}{}\doxysection{havka\+::Broker\+Server Class Reference}
+\label{classhavka_1_1BrokerServer}\index{havka::BrokerServer@{havka::BrokerServer}}
+
+
+Class is responsible for handling new clients and creating new Connections.  
+
+
+
+
+{\ttfamily \#include $<$server.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhavka_1_1BrokerServer_a56a56fcc1b86d46b9ff3059aba0cbb32}{Broker\+Server}} (const net\+::ip\+::address \&address, unsigned short port, Storage\+Type storage\+Type, Queue\+Type queue\+Type, int threads=-\/1, int seconds\+Timeout=-\/1)
+\item 
+\mbox{\hyperlink{classhavka_1_1BrokerServer_a97e52e3cc127dcb0823fb6f53f48b628}{$\sim$\+Broker\+Server}} ()
+\item 
+void \mbox{\hyperlink{classhavka_1_1BrokerServer_a56305aaf710f16973aa52e8521eb9e40}{run}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class is responsible for handling new clients and creating new Connections. 
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{auto} broker = std::make\_unique<havka::BrokerServer>(}
+\DoxyCodeLine{    \textcolor{stringliteral}{"127.0.0.1"}, 9090, havka::StorageType::RAM,}
+\DoxyCodeLine{    havka::QueueType::MutexQueue, 12, 360);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{    broker-\/>run();}
+\DoxyCodeLine{\} \textcolor{keywordflow}{catch} (std::exception\& e) \{}
+\DoxyCodeLine{    std::cerr << e.what();}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classhavka_1_1BrokerServer_a56a56fcc1b86d46b9ff3059aba0cbb32}\label{classhavka_1_1BrokerServer_a56a56fcc1b86d46b9ff3059aba0cbb32}} 
+\index{havka::BrokerServer@{havka::BrokerServer}!BrokerServer@{BrokerServer}}
+\index{BrokerServer@{BrokerServer}!havka::BrokerServer@{havka::BrokerServer}}
+\doxysubsubsection{\texorpdfstring{BrokerServer()}{BrokerServer()}}
+{\footnotesize\ttfamily havka\+::\+Broker\+Server\+::\+Broker\+Server (\begin{DoxyParamCaption}\item[{const net\+::ip\+::address \&}]{address,  }\item[{unsigned short}]{port,  }\item[{Storage\+Type}]{storage\+Type,  }\item[{Queue\+Type}]{queue\+Type,  }\item[{int}]{threads = {\ttfamily -\/1},  }\item[{int}]{seconds\+Timeout = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Constructor of \mbox{\hyperlink{classhavka_1_1BrokerServer}{Broker\+Server}} instance. Initializes storage and context. 
+\begin{DoxyParams}{Parameters}
+{\em address} & Server address \\
+\hline
+{\em port} & Server port \\
+\hline
+{\em storage\+Type} & Type of storage for messages \\
+\hline
+{\em queue\+Type} & Type of queues used in storage \\
+\hline
+{\em threads} & Number of threads (-\/1 to set it to maximum) \\
+\hline
+{\em seconds\+Timeout} & Server timeout in seconds (-\/1 to set it to maximum) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classhavka_1_1BrokerServer_a97e52e3cc127dcb0823fb6f53f48b628}\label{classhavka_1_1BrokerServer_a97e52e3cc127dcb0823fb6f53f48b628}} 
+\index{havka::BrokerServer@{havka::BrokerServer}!````~BrokerServer@{$\sim$BrokerServer}}
+\index{````~BrokerServer@{$\sim$BrokerServer}!havka::BrokerServer@{havka::BrokerServer}}
+\doxysubsubsection{\texorpdfstring{$\sim$BrokerServer()}{~BrokerServer()}}
+{\footnotesize\ttfamily havka\+::\+Broker\+Server\+::$\sim$\+Broker\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor of \mbox{\hyperlink{classhavka_1_1BrokerServer}{Broker\+Server}}. Joins threads. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classhavka_1_1BrokerServer_a56305aaf710f16973aa52e8521eb9e40}\label{classhavka_1_1BrokerServer_a56305aaf710f16973aa52e8521eb9e40}} 
+\index{havka::BrokerServer@{havka::BrokerServer}!run@{run}}
+\index{run@{run}!havka::BrokerServer@{havka::BrokerServer}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void havka\+::\+Broker\+Server\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Creates callbacks on deadline or signal to stop server, creates callback on new client connection and runs threads. Blocks until server will stop. Blocking 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/server/server.\+h\item 
+src/server/server.\+cpp\end{DoxyCompactItemize}

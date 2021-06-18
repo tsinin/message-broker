@@ -1,0 +1,110 @@
+\hypertarget{classhavka_1_1ServerConfig}{}\doxysection{havka\+::Server\+Config Class Reference}
+\label{classhavka_1_1ServerConfig}\index{havka::ServerConfig@{havka::ServerConfig}}
+
+
+Class for reading server config from file.  
+
+
+
+
+{\ttfamily \#include $<$server\+\_\+config.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhavka_1_1ServerConfig_abded23cf28da92f0e211dfee3cd42881}{Server\+Config}} (const std\+::string \&config\+\_\+path)
+\item 
+net\+::ip\+::address \mbox{\hyperlink{classhavka_1_1ServerConfig_a3f69c07c1b641060ee65d0ea0b94c720}{get\+Address}} () const
+\item 
+unsigned short \mbox{\hyperlink{classhavka_1_1ServerConfig_a8ac809be0b7be1c28b2bfa9092441bd8}{get\+Port}} () const
+\item 
+Storage\+Type \mbox{\hyperlink{classhavka_1_1ServerConfig_aca117a981e904c42e53740e8ad79c2e9}{get\+Storage\+Type}} () const
+\item 
+Queue\+Type \mbox{\hyperlink{classhavka_1_1ServerConfig_a4ab0b4e9b8f5be4afc62839133f5892b}{get\+Queue\+Type}} () const
+\item 
+int \mbox{\hyperlink{classhavka_1_1ServerConfig_a421b08dffecbc715a7754381c54912c7}{get\+Threads\+Number}} () const
+\item 
+int \mbox{\hyperlink{classhavka_1_1ServerConfig_ac93d1d893f0d40b93fcb11d9500e9176}{get\+Timeout}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for reading server config from file. 
+
+Class is responsible for handling server configuration file and transforming data in code. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classhavka_1_1ServerConfig_abded23cf28da92f0e211dfee3cd42881}\label{classhavka_1_1ServerConfig_abded23cf28da92f0e211dfee3cd42881}} 
+\index{havka::ServerConfig@{havka::ServerConfig}!ServerConfig@{ServerConfig}}
+\index{ServerConfig@{ServerConfig}!havka::ServerConfig@{havka::ServerConfig}}
+\doxysubsubsection{\texorpdfstring{ServerConfig()}{ServerConfig()}}
+{\footnotesize\ttfamily havka\+::\+Server\+Config\+::\+Server\+Config (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{config\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Reads data from configuration file and says if something essential is absent. 
+\begin{DoxyParams}{Parameters}
+{\em config\+\_\+path} & path to configuration file \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classhavka_1_1ServerConfig_a3f69c07c1b641060ee65d0ea0b94c720}\label{classhavka_1_1ServerConfig_a3f69c07c1b641060ee65d0ea0b94c720}} 
+\index{havka::ServerConfig@{havka::ServerConfig}!getAddress@{getAddress}}
+\index{getAddress@{getAddress}!havka::ServerConfig@{havka::ServerConfig}}
+\doxysubsubsection{\texorpdfstring{getAddress()}{getAddress()}}
+{\footnotesize\ttfamily net\+::ip\+::address havka\+::\+Server\+Config\+::get\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns server IP address (boost\+::asio\+::ip\+::address) \begin{DoxyReturn}{Returns}
+server IP address 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classhavka_1_1ServerConfig_a8ac809be0b7be1c28b2bfa9092441bd8}\label{classhavka_1_1ServerConfig_a8ac809be0b7be1c28b2bfa9092441bd8}} 
+\index{havka::ServerConfig@{havka::ServerConfig}!getPort@{getPort}}
+\index{getPort@{getPort}!havka::ServerConfig@{havka::ServerConfig}}
+\doxysubsubsection{\texorpdfstring{getPort()}{getPort()}}
+{\footnotesize\ttfamily unsigned short havka\+::\+Server\+Config\+::get\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns server port (unsigned short) \begin{DoxyReturn}{Returns}
+server port 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classhavka_1_1ServerConfig_a4ab0b4e9b8f5be4afc62839133f5892b}\label{classhavka_1_1ServerConfig_a4ab0b4e9b8f5be4afc62839133f5892b}} 
+\index{havka::ServerConfig@{havka::ServerConfig}!getQueueType@{getQueueType}}
+\index{getQueueType@{getQueueType}!havka::ServerConfig@{havka::ServerConfig}}
+\doxysubsubsection{\texorpdfstring{getQueueType()}{getQueueType()}}
+{\footnotesize\ttfamily Queue\+Type havka\+::\+Server\+Config\+::get\+Queue\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns queue type \begin{DoxyReturn}{Returns}
+queue type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classhavka_1_1ServerConfig_aca117a981e904c42e53740e8ad79c2e9}\label{classhavka_1_1ServerConfig_aca117a981e904c42e53740e8ad79c2e9}} 
+\index{havka::ServerConfig@{havka::ServerConfig}!getStorageType@{getStorageType}}
+\index{getStorageType@{getStorageType}!havka::ServerConfig@{havka::ServerConfig}}
+\doxysubsubsection{\texorpdfstring{getStorageType()}{getStorageType()}}
+{\footnotesize\ttfamily Storage\+Type havka\+::\+Server\+Config\+::get\+Storage\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns storage type \begin{DoxyReturn}{Returns}
+storage type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classhavka_1_1ServerConfig_a421b08dffecbc715a7754381c54912c7}\label{classhavka_1_1ServerConfig_a421b08dffecbc715a7754381c54912c7}} 
+\index{havka::ServerConfig@{havka::ServerConfig}!getThreadsNumber@{getThreadsNumber}}
+\index{getThreadsNumber@{getThreadsNumber}!havka::ServerConfig@{havka::ServerConfig}}
+\doxysubsubsection{\texorpdfstring{getThreadsNumber()}{getThreadsNumber()}}
+{\footnotesize\ttfamily int havka\+::\+Server\+Config\+::get\+Threads\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns number of threads \begin{DoxyReturn}{Returns}
+number of threads 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classhavka_1_1ServerConfig_ac93d1d893f0d40b93fcb11d9500e9176}\label{classhavka_1_1ServerConfig_ac93d1d893f0d40b93fcb11d9500e9176}} 
+\index{havka::ServerConfig@{havka::ServerConfig}!getTimeout@{getTimeout}}
+\index{getTimeout@{getTimeout}!havka::ServerConfig@{havka::ServerConfig}}
+\doxysubsubsection{\texorpdfstring{getTimeout()}{getTimeout()}}
+{\footnotesize\ttfamily int havka\+::\+Server\+Config\+::get\+Timeout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns server timeout in seconds \begin{DoxyReturn}{Returns}
+server timeout in seconds 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/server/server\+\_\+config.\+h\item 
+src/server/server\+\_\+config.\+cpp\end{DoxyCompactItemize}

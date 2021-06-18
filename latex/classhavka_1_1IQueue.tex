@@ -1,0 +1,100 @@
+\hypertarget{classhavka_1_1IQueue}{}\doxysection{havka\+::I\+Queue$<$ T $>$ Class Template Reference}
+\label{classhavka_1_1IQueue}\index{havka::IQueue$<$ T $>$@{havka::IQueue$<$ T $>$}}
+
+
+Queue interface.  
+
+
+
+
+{\ttfamily \#include $<$queue.\+h$>$}
+
+
+
+Inheritance diagram for havka\+::I\+Queue$<$ T $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classhavka_1_1IQueue__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classhavka_1_1IQueue_a06fe7ef75051baf55c98fe58929a0a0f}\label{classhavka_1_1IQueue_a06fe7ef75051baf55c98fe58929a0a0f}} 
+{\bfseries I\+Queue} (const \mbox{\hyperlink{classhavka_1_1IQueue}{I\+Queue}}$<$ T $>$ \&)=delete
+\item 
+\mbox{\Hypertarget{classhavka_1_1IQueue_a05d3f7dba3c1189d0af286259ba9f4a9}\label{classhavka_1_1IQueue_a05d3f7dba3c1189d0af286259ba9f4a9}} 
+virtual \mbox{\hyperlink{classhavka_1_1IQueue}{I\+Queue}} \& {\bfseries operator=} (const \mbox{\hyperlink{classhavka_1_1IQueue}{I\+Queue}}$<$ T $>$ \&)=delete
+\item 
+virtual unsigned long \mbox{\hyperlink{classhavka_1_1IQueue_add514e6f61e1ccb06109974153f4f7bf}{size}} () const =0
+\item 
+virtual std\+::optional$<$ T $>$ \mbox{\hyperlink{classhavka_1_1IQueue_a874c04d97d8819bde5e98b395b27d479}{pop}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classhavka_1_1IQueue_a5b7fe55830bfb375dd363160fc6ff835}{push}} (const T \&item)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class havka\+::\+I\+Queue$<$ T $>$}
+
+Queue interface. 
+
+Class \mbox{\hyperlink{classhavka_1_1IQueue}{I\+Queue}} is a queue interface of objects with type T 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of elements in queue \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classhavka_1_1IQueue_a874c04d97d8819bde5e98b395b27d479}\label{classhavka_1_1IQueue_a874c04d97d8819bde5e98b395b27d479}} 
+\index{havka::IQueue$<$ T $>$@{havka::IQueue$<$ T $>$}!pop@{pop}}
+\index{pop@{pop}!havka::IQueue$<$ T $>$@{havka::IQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual std\+::optional$<$T$>$ \mbox{\hyperlink{classhavka_1_1IQueue}{havka\+::\+I\+Queue}}$<$ T $>$\+::pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Gets first element in the queue and removes it from the queue if queue is not empty, else returns std\+::nullopt \begin{DoxyReturn}{Returns}
+First element or std\+::nullopt if queue is empty 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classhavka_1_1MutexQueue_a8245c5e58bb09732aeb95b2fa018393f}{havka\+::\+Mutex\+Queue$<$ T $>$}}.
+
+\mbox{\Hypertarget{classhavka_1_1IQueue_a5b7fe55830bfb375dd363160fc6ff835}\label{classhavka_1_1IQueue_a5b7fe55830bfb375dd363160fc6ff835}} 
+\index{havka::IQueue$<$ T $>$@{havka::IQueue$<$ T $>$}!push@{push}}
+\index{push@{push}!havka::IQueue$<$ T $>$@{havka::IQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual void \mbox{\hyperlink{classhavka_1_1IQueue}{havka\+::\+I\+Queue}}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{const T \&}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Pushes new element to the queue. 
+\begin{DoxyParams}{Parameters}
+{\em item} & Element to push to the queue \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classhavka_1_1MutexQueue_a8aa3f11c8772f4c44d06f020a168eaa6}{havka\+::\+Mutex\+Queue$<$ T $>$}}.
+
+\mbox{\Hypertarget{classhavka_1_1IQueue_add514e6f61e1ccb06109974153f4f7bf}\label{classhavka_1_1IQueue_add514e6f61e1ccb06109974153f4f7bf}} 
+\index{havka::IQueue$<$ T $>$@{havka::IQueue$<$ T $>$}!size@{size}}
+\index{size@{size}!havka::IQueue$<$ T $>$@{havka::IQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual unsigned long \mbox{\hyperlink{classhavka_1_1IQueue}{havka\+::\+I\+Queue}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Gets current number of elements in queue \begin{DoxyReturn}{Returns}
+Number of elements 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classhavka_1_1MutexQueue_aacec5d0f5183d7a547c97c5461772037}{havka\+::\+Mutex\+Queue$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/server/queue.\+h\end{DoxyCompactItemize}

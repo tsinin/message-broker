@@ -1,0 +1,4 @@
+<map id="havka::MutexQueue&lt; T &gt;" name="havka::MutexQueue&lt; T &gt;">
+<area shape="rect" id="node1" title="Implementation of queue interface with mutex. Thread&#45;safe." alt="" coords="5,80,196,107"/>
+<area shape="rect" id="node2" href="$classhavka_1_1IQueue.html" title="Queue interface." alt="" coords="24,5,177,32"/>
+</map>

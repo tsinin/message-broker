@@ -1,0 +1,42 @@
+\hypertarget{client_8cpp}{}\doxysection{client.\+cpp File Reference}
+\label{client_8cpp}\index{client.cpp@{client.cpp}}
+{\ttfamily \#include \char`\"{}client/client.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+Include dependency graph for client.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{client_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{client_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{client_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{client_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{client.cpp@{client.cpp}!main@{main}}
+\index{main@{main}!client.cpp@{client.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Example of usage Havka\+Sync\+Client and Client\+Config
+
+Initializing config from file path
+
+Initializing client. Server address and port are in config object
+
+Connecting to server. Function returns false on failure
+
+Initializing message to send and setting data to it
+
+Posting message to server. Posting type is required
+
+Getting message with exact tag from server. Call is blocking anyway, blocking in type is about protocol\+: Get\+Message\+Blocking -\/ if queue is empty, client waits for message Get\+Message\+Nonblocking -\/ if queue is empty, client returns std\+::nullopt
+
+out-\/$>$data is an std\+::string object with message. Can be interpreted just as bytes sequence.

@@ -1,0 +1,153 @@
+\hypertarget{classhavka_1_1BrokerSyncClient}{}\doxysection{havka\+::Broker\+Sync\+Client Class Reference}
+\label{classhavka_1_1BrokerSyncClient}\index{havka::BrokerSyncClient@{havka::BrokerSyncClient}}
+
+
+Implementation of interface for message broker client.  
+
+
+
+
+{\ttfamily \#include $<$client.\+h$>$}
+
+
+
+Inheritance diagram for havka\+::Broker\+Sync\+Client\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classhavka_1_1BrokerSyncClient__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for havka\+::Broker\+Sync\+Client\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classhavka_1_1BrokerSyncClient__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhavka_1_1BrokerSyncClient_a18fd76e73e47a34b1188a18584f9aa48}{Broker\+Sync\+Client}} (const net\+::ip\+::address \&server\+Address, unsigned short server\+Port, std\+::size\+\_\+t max\+Buffer\+Size=65536)
+\item 
+\mbox{\hyperlink{classhavka_1_1BrokerSyncClient_a4e71656dc9ee697349cc6e392ef79eac}{$\sim$\+Broker\+Sync\+Client}} ()
+\item 
+bool \mbox{\hyperlink{classhavka_1_1BrokerSyncClient_a25b426584f69d0d0e996f69c0e2bd5ab}{connect}} () override
+\item 
+bool \mbox{\hyperlink{classhavka_1_1BrokerSyncClient_a78d373d8ddae8158598f89cea6fa5ee0}{post\+Message}} (const \mbox{\hyperlink{structhavka_1_1Message}{Message}} \&message, const std\+::string \&tag, \mbox{\hyperlink{namespacehavka_adbdab8f2725c23c4f65702464ebfbab6}{Request\+Type}} post\+Type) override
+\item 
+std\+::optional$<$ \mbox{\hyperlink{structhavka_1_1Message}{Message}} $>$ \mbox{\hyperlink{classhavka_1_1BrokerSyncClient_ac6b0534dfa67ba9c18471f2aa5ba91fb}{get\+Message}} (const std\+::string \&tag, \mbox{\hyperlink{namespacehavka_adbdab8f2725c23c4f65702464ebfbab6}{Request\+Type}} get\+Type) override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of interface for message broker client. 
+
+Code example\+:
+\begin{DoxyCode}{0}
+\DoxyCodeLine{BrokerSyncClient client(...);}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (!client.connect()) \{}
+\DoxyCodeLine{    ... error \textcolor{keywordflow}{while} connecting ...}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{... connection is successful ...}
+\DoxyCodeLine{Message message1;}
+\DoxyCodeLine{... fill message ...}
+\DoxyCodeLine{if (!client.postMessage(message1, \textcolor{stringliteral}{"some tag"}, RequestType::PostMessageSafe)) \{}
+\DoxyCodeLine{     ... error \textcolor{keywordflow}{while} posting ...}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{... posting is successful ...}
+\DoxyCodeLine{auto message2 = client.getMessage(\textcolor{stringliteral}{"some other tag"},}
+\DoxyCodeLine{                                  Request::GetMessageNonblocking);}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classhavka_1_1BrokerSyncClient_a18fd76e73e47a34b1188a18584f9aa48}\label{classhavka_1_1BrokerSyncClient_a18fd76e73e47a34b1188a18584f9aa48}} 
+\index{havka::BrokerSyncClient@{havka::BrokerSyncClient}!BrokerSyncClient@{BrokerSyncClient}}
+\index{BrokerSyncClient@{BrokerSyncClient}!havka::BrokerSyncClient@{havka::BrokerSyncClient}}
+\doxysubsubsection{\texorpdfstring{BrokerSyncClient()}{BrokerSyncClient()}}
+{\footnotesize\ttfamily havka\+::\+Broker\+Sync\+Client\+::\+Broker\+Sync\+Client (\begin{DoxyParamCaption}\item[{const net\+::ip\+::address \&}]{server\+Address,  }\item[{unsigned short}]{server\+Port,  }\item[{std\+::size\+\_\+t}]{max\+Buffer\+Size = {\ttfamily 65536} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Constructs client for message broker. 
+\begin{DoxyParams}{Parameters}
+{\em server\+Address} & server\textquotesingle{}s IP address \\
+\hline
+{\em server\+Port} & server\textquotesingle{}s port \\
+\hline
+{\em max\+Buffer\+Size} & max size for buffer (aka approximately max message size) in bytes \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classhavka_1_1BrokerSyncClient_a4e71656dc9ee697349cc6e392ef79eac}\label{classhavka_1_1BrokerSyncClient_a4e71656dc9ee697349cc6e392ef79eac}} 
+\index{havka::BrokerSyncClient@{havka::BrokerSyncClient}!````~BrokerSyncClient@{$\sim$BrokerSyncClient}}
+\index{````~BrokerSyncClient@{$\sim$BrokerSyncClient}!havka::BrokerSyncClient@{havka::BrokerSyncClient}}
+\doxysubsubsection{\texorpdfstring{$\sim$BrokerSyncClient()}{~BrokerSyncClient()}}
+{\footnotesize\ttfamily havka\+::\+Broker\+Sync\+Client\+::$\sim$\+Broker\+Sync\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor for client. Frees buffer. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classhavka_1_1BrokerSyncClient_a25b426584f69d0d0e996f69c0e2bd5ab}\label{classhavka_1_1BrokerSyncClient_a25b426584f69d0d0e996f69c0e2bd5ab}} 
+\index{havka::BrokerSyncClient@{havka::BrokerSyncClient}!connect@{connect}}
+\index{connect@{connect}!havka::BrokerSyncClient@{havka::BrokerSyncClient}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily bool havka\+::\+Broker\+Sync\+Client\+::connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Establishes connection between client and server. Should be used before all requests (post\+Message / get\+Message). If request goes before this function, nothing successful will be returned \begin{DoxyReturn}{Returns}
+Returns true on success, false on failure. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classhavka_1_1BrokerClient_ae8133e4f1b90044c0b14e856175e4c83}{havka\+::\+Broker\+Client}}.
+
+\mbox{\Hypertarget{classhavka_1_1BrokerSyncClient_ac6b0534dfa67ba9c18471f2aa5ba91fb}\label{classhavka_1_1BrokerSyncClient_ac6b0534dfa67ba9c18471f2aa5ba91fb}} 
+\index{havka::BrokerSyncClient@{havka::BrokerSyncClient}!getMessage@{getMessage}}
+\index{getMessage@{getMessage}!havka::BrokerSyncClient@{havka::BrokerSyncClient}}
+\doxysubsubsection{\texorpdfstring{getMessage()}{getMessage()}}
+{\footnotesize\ttfamily std\+::optional$<$ \mbox{\hyperlink{structhavka_1_1Message}{Message}} $>$ havka\+::\+Broker\+Sync\+Client\+::get\+Message (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag,  }\item[{\mbox{\hyperlink{namespacehavka_adbdab8f2725c23c4f65702464ebfbab6}{Request\+Type}}}]{get\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sends the request to the message broker to get message with exact tag. On success, server will delete the message. Blocking. 
+\begin{DoxyParams}{Parameters}
+{\em tag} & \mbox{\hyperlink{structhavka_1_1Message}{Message}} topic \\
+\hline
+{\em get\+Type} & Type of get\+Message request \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns message on success, std\+::nullopt on failure 
+\end{DoxyReturn}
+else send N\+O\+T\+H\+I\+NG and server will push task back to queue
+
+Implements \mbox{\hyperlink{classhavka_1_1BrokerClient_afc6338b212f09d62ec3ce32a0c57b224}{havka\+::\+Broker\+Client}}.
+
+\mbox{\Hypertarget{classhavka_1_1BrokerSyncClient_a78d373d8ddae8158598f89cea6fa5ee0}\label{classhavka_1_1BrokerSyncClient_a78d373d8ddae8158598f89cea6fa5ee0}} 
+\index{havka::BrokerSyncClient@{havka::BrokerSyncClient}!postMessage@{postMessage}}
+\index{postMessage@{postMessage}!havka::BrokerSyncClient@{havka::BrokerSyncClient}}
+\doxysubsubsection{\texorpdfstring{postMessage()}{postMessage()}}
+{\footnotesize\ttfamily bool havka\+::\+Broker\+Sync\+Client\+::post\+Message (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structhavka_1_1Message}{Message}} \&}]{message,  }\item[{const std\+::string \&}]{tag,  }\item[{\mbox{\hyperlink{namespacehavka_adbdab8f2725c23c4f65702464ebfbab6}{Request\+Type}}}]{post\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sends message to the message broker. \mbox{\hyperlink{structhavka_1_1Message}{Message}} will be read at most once. Blocking. 
+\begin{DoxyParams}{Parameters}
+{\em message} & \mbox{\hyperlink{structhavka_1_1Message}{Message}} to be sent \\
+\hline
+{\em tag} & Topic with which message should be sent \\
+\hline
+{\em post\+Type} & Type of post\+Message request \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true on success, false on failure 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classhavka_1_1BrokerClient_a56f14d18b65a50f403fe47459817dd3d}{havka\+::\+Broker\+Client}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/client/client.\+h\item 
+src/client/client.\+cpp\end{DoxyCompactItemize}

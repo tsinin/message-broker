@@ -1,0 +1,8 @@
+endpoint_address: 127.0.0.1
+endpoint_port: 9090
+
+storage_type: ram
+queue_type: mutex
+
+threads: -1 # maximum, being set by default if absent
+timeout: -1 # without timeout, being set by default if absent

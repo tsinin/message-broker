@@ -1,0 +1,74 @@
+\hypertarget{classsession}{}\doxysection{session Class Reference}
+\label{classsession}\index{session@{session}}
+
+
+Inheritance diagram for session\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classsession__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for session\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classsession__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsession_a2a7084fd0750c79af23a6947ca626827}\label{classsession_a2a7084fd0750c79af23a6947ca626827}} 
+{\bfseries session} (tcp\+::socket socket)
+\item 
+\mbox{\Hypertarget{classsession_ad69144e27f558b8960efae132f2e15f4}\label{classsession_ad69144e27f558b8960efae132f2e15f4}} 
+void {\bfseries start} ()
+\item 
+\mbox{\Hypertarget{classsession_ab4a1129c40b2aecaaae3cd5a8bf5b066}\label{classsession_ab4a1129c40b2aecaaae3cd5a8bf5b066}} 
+{\bfseries session} (net\+::io\+\_\+context \&ioc)
+\item 
+\mbox{\Hypertarget{classsession_a43077366b4e3846ae68d3a5bc8d943ac}\label{classsession_a43077366b4e3846ae68d3a5bc8d943ac}} 
+void {\bfseries run} (char const $\ast$host, char const $\ast$port, char const $\ast$target, int version)
+\item 
+\mbox{\Hypertarget{classsession_a9ada2c5e204774ed2e15d1826fecd5ac}\label{classsession_a9ada2c5e204774ed2e15d1826fecd5ac}} 
+void {\bfseries on\+\_\+resolve} (beast\+::error\+\_\+code ec, tcp\+::resolver\+::results\+\_\+type results)
+\item 
+\mbox{\Hypertarget{classsession_a252d089f7b532a3caee42aae866d2ffe}\label{classsession_a252d089f7b532a3caee42aae866d2ffe}} 
+void {\bfseries on\+\_\+connect} (beast\+::error\+\_\+code ec, tcp\+::resolver\+::results\+\_\+type\+::endpoint\+\_\+type)
+\item 
+\mbox{\Hypertarget{classsession_a2d65a90686e18fd2882c5d961acf25a1}\label{classsession_a2d65a90686e18fd2882c5d961acf25a1}} 
+void {\bfseries on\+\_\+write} (beast\+::error\+\_\+code ec, std\+::size\+\_\+t bytes\+\_\+transferred)
+\item 
+\mbox{\Hypertarget{classsession_ac31d004bd407baec6bf6dc01a72afd30}\label{classsession_ac31d004bd407baec6bf6dc01a72afd30}} 
+void {\bfseries on\+\_\+read} (beast\+::error\+\_\+code ec, std\+::size\+\_\+t bytes\+\_\+transferred)
+\item 
+\mbox{\Hypertarget{classsession_a3442dd5f5a101e871bf4c516298020e6}\label{classsession_a3442dd5f5a101e871bf4c516298020e6}} 
+{\bfseries session} (tcp\+::socket \&\&socket, std\+::shared\+\_\+ptr$<$ std\+::string const $>$ const \&doc\+\_\+root)
+\item 
+\mbox{\Hypertarget{classsession_ac479e60ec2f9d5291ce444cec281082b}\label{classsession_ac479e60ec2f9d5291ce444cec281082b}} 
+void {\bfseries run} ()
+\item 
+\mbox{\Hypertarget{classsession_a4b03d0101ef7b6cebb42df14562cfb61}\label{classsession_a4b03d0101ef7b6cebb42df14562cfb61}} 
+void {\bfseries do\+\_\+read} ()
+\item 
+\mbox{\Hypertarget{classsession_ac31d004bd407baec6bf6dc01a72afd30}\label{classsession_ac31d004bd407baec6bf6dc01a72afd30}} 
+void {\bfseries on\+\_\+read} (beast\+::error\+\_\+code ec, std\+::size\+\_\+t bytes\+\_\+transferred)
+\item 
+\mbox{\Hypertarget{classsession_adfa1c32490d463d202bab2f8022768da}\label{classsession_adfa1c32490d463d202bab2f8022768da}} 
+void {\bfseries on\+\_\+write} (bool close, beast\+::error\+\_\+code ec, std\+::size\+\_\+t bytes\+\_\+transferred)
+\item 
+\mbox{\Hypertarget{classsession_af438851204b3a925492c15b2b30788e6}\label{classsession_af438851204b3a925492c15b2b30788e6}} 
+void {\bfseries do\+\_\+close} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+boost\+\_\+examples/async\+\_\+tcp\+\_\+echo\+\_\+server.\+cpp\item 
+boost\+\_\+examples/http\+\_\+async\+\_\+client.\+cpp\item 
+boost\+\_\+examples/http\+\_\+server\+\_\+async.\+cpp\end{DoxyCompactItemize}

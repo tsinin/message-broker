@@ -1,0 +1,95 @@
+\hypertarget{classhavka_1_1IMessageStorage}{}\doxysection{havka\+::I\+Message\+Storage Class Reference}
+\label{classhavka_1_1IMessageStorage}\index{havka::IMessageStorage@{havka::IMessageStorage}}
+
+
+Storage interface for server.  
+
+
+
+
+{\ttfamily \#include $<$storage.\+h$>$}
+
+
+
+Inheritance diagram for havka\+::I\+Message\+Storage\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classhavka_1_1IMessageStorage__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classhavka_1_1IMessageStorage_a3f263ce5807a97ecaff6b546d3ca8b0a}{post\+Message}} (const \mbox{\hyperlink{structhavka_1_1Message}{Message}} \&message, const std\+::string \&tag)=0
+\item 
+virtual std\+::optional$<$ \mbox{\hyperlink{structhavka_1_1Message}{Message}} $>$ \mbox{\hyperlink{classhavka_1_1IMessageStorage_a26f6449215c3b41cd214cf7e7041c532}{get\+Message\+Nonblocking}} (const std\+::string \&tag)=0
+\item 
+virtual std\+::optional$<$ \mbox{\hyperlink{structhavka_1_1Message}{Message}} $>$ \mbox{\hyperlink{classhavka_1_1IMessageStorage_ae2a93f60d0d1e52e6798976a6c403da6}{get\+Message\+Blocking}} (const std\+::string \&tag, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classhavka_1_1Connection}{Connection}} $>$ connection)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Storage interface for server. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classhavka_1_1IMessageStorage_ae2a93f60d0d1e52e6798976a6c403da6}\label{classhavka_1_1IMessageStorage_ae2a93f60d0d1e52e6798976a6c403da6}} 
+\index{havka::IMessageStorage@{havka::IMessageStorage}!getMessageBlocking@{getMessageBlocking}}
+\index{getMessageBlocking@{getMessageBlocking}!havka::IMessageStorage@{havka::IMessageStorage}}
+\doxysubsubsection{\texorpdfstring{getMessageBlocking()}{getMessageBlocking()}}
+{\footnotesize\ttfamily virtual std\+::optional$<$\mbox{\hyperlink{structhavka_1_1Message}{Message}}$>$ havka\+::\+I\+Message\+Storage\+::get\+Message\+Blocking (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classhavka_1_1Connection}{Connection}} $>$}]{connection }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Gets message from the storage. Call is nonblocking. If queue is empty, pushes client to the waiting queue. 
+\begin{DoxyParams}{Parameters}
+{\em tag} & message topic \\
+\hline
+{\em connection} & clients connection (which is being pushed to waiting queue if needed) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+message or std\+::nullopt if topic is empty 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classhavka_1_1RamStorage_aede09d6819ad77422ac9180b75f2f0ad}{havka\+::\+Ram\+Storage}}.
+
+\mbox{\Hypertarget{classhavka_1_1IMessageStorage_a26f6449215c3b41cd214cf7e7041c532}\label{classhavka_1_1IMessageStorage_a26f6449215c3b41cd214cf7e7041c532}} 
+\index{havka::IMessageStorage@{havka::IMessageStorage}!getMessageNonblocking@{getMessageNonblocking}}
+\index{getMessageNonblocking@{getMessageNonblocking}!havka::IMessageStorage@{havka::IMessageStorage}}
+\doxysubsubsection{\texorpdfstring{getMessageNonblocking()}{getMessageNonblocking()}}
+{\footnotesize\ttfamily virtual std\+::optional$<$\mbox{\hyperlink{structhavka_1_1Message}{Message}}$>$ havka\+::\+I\+Message\+Storage\+::get\+Message\+Nonblocking (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Gets message from the storage. If topic is empty, returns std\+::nullopt Nonblocking. 
+\begin{DoxyParams}{Parameters}
+{\em tag} & message topic \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+message or std\+::nullopt if topic is empty 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classhavka_1_1RamStorage_abba4728c2a65b4038b91c76a2593d53e}{havka\+::\+Ram\+Storage}}.
+
+\mbox{\Hypertarget{classhavka_1_1IMessageStorage_a3f263ce5807a97ecaff6b546d3ca8b0a}\label{classhavka_1_1IMessageStorage_a3f263ce5807a97ecaff6b546d3ca8b0a}} 
+\index{havka::IMessageStorage@{havka::IMessageStorage}!postMessage@{postMessage}}
+\index{postMessage@{postMessage}!havka::IMessageStorage@{havka::IMessageStorage}}
+\doxysubsubsection{\texorpdfstring{postMessage()}{postMessage()}}
+{\footnotesize\ttfamily virtual void havka\+::\+I\+Message\+Storage\+::post\+Message (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structhavka_1_1Message}{Message}} \&}]{message,  }\item[{const std\+::string \&}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Posts message to the storage. If topic is empty and there are waiting clients, sends message to one of them 
+\begin{DoxyParams}{Parameters}
+{\em message} & message to post \\
+\hline
+{\em tag} & message topic \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classhavka_1_1RamStorage_a18875690e2a8c7afbd91f0108132f4e7}{havka\+::\+Ram\+Storage}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/server/storage.\+h\end{DoxyCompactItemize}

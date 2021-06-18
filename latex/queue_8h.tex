@@ -1,0 +1,49 @@
+\hypertarget{queue_8h}{}\doxysection{src/server/queue.h File Reference}
+\label{queue_8h}\index{src/server/queue.h@{src/server/queue.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$optional$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include \char`\"{}message.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}net.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+Include dependency graph for queue.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{queue_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{queue_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classhavka_1_1IQueue}{havka\+::\+I\+Queue$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classhavka_1_1MutexQueue}{havka\+::\+Mutex\+Queue$<$ T $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacehavka}{havka}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ I\+Queue$<$ Message $>$ $>$ \mbox{\hyperlink{namespacehavka_a713f0ac4f59402e8c04cc26c28f3eb2d}{havka\+::create\+Message\+Queue}} (Queue\+Type queue\+Type)
+\item 
+std\+::shared\+\_\+ptr$<$ I\+Queue$<$ std\+::shared\+\_\+ptr$<$ Connection $>$ $>$ $>$ \mbox{\hyperlink{namespacehavka_aa7573c20bdff79dd24c9eb3858eacc8c}{havka\+::create\+Connection\+Queue}} (Queue\+Type queue\+Type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Forward declaration, definition is in 

@@ -1,0 +1,66 @@
+\hypertarget{classhavka_1_1ClientConfig}{}\doxysection{havka\+::Client\+Config Class Reference}
+\label{classhavka_1_1ClientConfig}\index{havka::ClientConfig@{havka::ClientConfig}}
+
+
+Class for reading client config from file.  
+
+
+
+
+{\ttfamily \#include $<$client\+\_\+config.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhavka_1_1ClientConfig_a672ec7e9fa613639d5d3cdc391cfa5c6}{Client\+Config}} (const std\+::string \&config\+\_\+path)
+\item 
+net\+::ip\+::address \mbox{\hyperlink{classhavka_1_1ClientConfig_a865736fe115f8c9ad6cdd7d8b9043740}{get\+Server\+Address}} () const
+\item 
+unsigned short \mbox{\hyperlink{classhavka_1_1ClientConfig_a813931dfa502e45c2a712d3e7c05f757}{get\+Server\+Port}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for reading client config from file. 
+
+Class is responsible for handling client configuration file and transforming data in code. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classhavka_1_1ClientConfig_a672ec7e9fa613639d5d3cdc391cfa5c6}\label{classhavka_1_1ClientConfig_a672ec7e9fa613639d5d3cdc391cfa5c6}} 
+\index{havka::ClientConfig@{havka::ClientConfig}!ClientConfig@{ClientConfig}}
+\index{ClientConfig@{ClientConfig}!havka::ClientConfig@{havka::ClientConfig}}
+\doxysubsubsection{\texorpdfstring{ClientConfig()}{ClientConfig()}}
+{\footnotesize\ttfamily havka\+::\+Client\+Config\+::\+Client\+Config (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{config\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Reads data from configuration file and says if something essential is absent. 
+\begin{DoxyParams}{Parameters}
+{\em config\+\_\+path} & path to configuration file \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classhavka_1_1ClientConfig_a865736fe115f8c9ad6cdd7d8b9043740}\label{classhavka_1_1ClientConfig_a865736fe115f8c9ad6cdd7d8b9043740}} 
+\index{havka::ClientConfig@{havka::ClientConfig}!getServerAddress@{getServerAddress}}
+\index{getServerAddress@{getServerAddress}!havka::ClientConfig@{havka::ClientConfig}}
+\doxysubsubsection{\texorpdfstring{getServerAddress()}{getServerAddress()}}
+{\footnotesize\ttfamily net\+::ip\+::address havka\+::\+Client\+Config\+::get\+Server\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns server IP address (boost\+::asio\+::ip\+::address) \begin{DoxyReturn}{Returns}
+server IP address 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classhavka_1_1ClientConfig_a813931dfa502e45c2a712d3e7c05f757}\label{classhavka_1_1ClientConfig_a813931dfa502e45c2a712d3e7c05f757}} 
+\index{havka::ClientConfig@{havka::ClientConfig}!getServerPort@{getServerPort}}
+\index{getServerPort@{getServerPort}!havka::ClientConfig@{havka::ClientConfig}}
+\doxysubsubsection{\texorpdfstring{getServerPort()}{getServerPort()}}
+{\footnotesize\ttfamily unsigned short havka\+::\+Client\+Config\+::get\+Server\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns server port (unsigned short) \begin{DoxyReturn}{Returns}
+server port 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/client/client\+\_\+config.\+h\item 
+src/client/client\+\_\+config.\+cpp\end{DoxyCompactItemize}
