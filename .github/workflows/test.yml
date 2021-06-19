@@ -19,7 +19,7 @@ jobs:
         run: |
           sudo apt-get update -y
           sudo apt-get install -y libboost-all-dev
-          sudo apt-get install -y libcereal-cpp-dev
+          sudo apt-get install -y libcereal-dev
           sudo apt-get install -y libyaml-cpp-dev
           sudo apt-get install libgtest-dev
 #          sudo apt-get install -y googletest
