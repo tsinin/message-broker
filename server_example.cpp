@@ -1,9 +1,7 @@
 #include "server/server.h"
 
-#include <fstream>
 #include <iostream>
 #include <memory>
-#include <sstream>
 
 int main(int argc, char* argv[]) {
     /// Example of usage of havka::ServerConfig and havka::BrokerServer
@@ -17,7 +15,7 @@ int main(int argc, char* argv[]) {
     /// and timeout in seconds (default is -1, without timeout)
     auto broker = std::make_unique<havka::BrokerServer>(
         config.getAddress(), config.getPort(), config.getStorageType(),
-        config.getQueueType(), -1, -1);
+        config.getQueueType(), config.getThreadsNumber(), config.getTimeout());
 
     try {
         /// Running server. Blocking call.
