@@ -4,6 +4,10 @@
 #include <memory>
 
 int main(int argc, char* argv[]) {
+    if (argc < 2) {
+        LOG_FATAL("Usage example: ./client path_to_config_file\n");
+    }
+
     /// Example of usage of havka::ServerConfig and havka::BrokerServer
     std::string config_path{argv[1]};
 
