@@ -14,10 +14,10 @@ Needs some libraries (see below). There is a docker for server.
 * [Configuration](#configuration)
 * [Classes usage](#classes-usage)
 * [Messaging protocol](#messaging-protocol)
-    + [Types](#Request and response types)
-    + [RequestType::PostMessageSafe](#RequestType::PostMessageSafe)
-    + [RequestType::GetMessageNonblocking](#RequestType::GetMessageNonblocking)
-    + [RequestType::GetMessageBlocking](#RequestType::GetMessageBlocking)
+    + [Types](#request-and-response-types)
+    + [RequestType::PostMessageSafe](#postmessagesafe)
+    + [RequestType::GetMessageNonblocking](#getmessagenonblocking)
+    + [RequestType::GetMessageBlocking](#getmessageblocking)
 
 ## Docker
 
@@ -145,14 +145,14 @@ enum ResponseType {
 }   // namespace havka
 ```
 
-### RequestType::PostMessageSafe
+### <a name="postmessagesafe"></a>RequestType::PostMessageSafe
 
 ![Post scenario diagram](pictures/post_scenario.png)
 
-### RequestType::GetMessageNonblocking
+### <a name="getmessagenonblocking"></a>RequestType::GetMessageNonblocking
 
 ![Nonblocking get-request scenario diagram](pictures/nonblocking_get_scenario.png)
 
-### RequestType::GetMessageBlocking
+### <a name="getmessageblocking"></a>RequestType::GetMessageBlocking
 
 ![Blocking get-request scenario diagram](pictures/blocking_get_scenario.png)
