@@ -33,7 +33,6 @@ void Connection::start() {
 }
 
 void Connection::sendEmergedMessage(const Message &message) {
-    assert(request_.type == RequestType::GetMessageBlocking);
     response_.message = message;
     response_.type = ResponseType::GetSuccess;
     serializeResponse_();

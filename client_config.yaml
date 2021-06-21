@@ -1,2 +1,4 @@
+# Required
 server_address: 127.0.0.1
+# Required
 server_port: 9090

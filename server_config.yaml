@@ -1,8 +1,18 @@
+# Required
 endpoint_address: 127.0.0.1
+# Required
 endpoint_port: 9090
 
+# Storage type used. Now there is only RAM storage
+# Being set to ram if absent.
 storage_type: ram
+# Queues type used. Now there is only queue with mutex
+# Being set to mutex if absent.
 queue_type: mutex
 
-threads: -1 # maximum, being set by default if absent
-timeout: -1 # without timeout, being set by default if absent
+# Number of threads for server. If -1, being set to maximum.
+# Being set to -1 if absent.
+threads: -1
+# Timeout for server in seconds. If -1, there is no timeout.
+# Being set to -1 if absent.
+timeout: -1
