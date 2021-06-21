@@ -1,4 +1,4 @@
-# Havka Message Broker
+# Message Broker
 
 ![Build](https://img.shields.io/badge/build-passing-<COLOR>.svg)
 ![Tests](https://img.shields.io/badge/tests-passing-<COLOR>.svg)
